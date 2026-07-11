@@ -1,0 +1,160 @@
+/* ============================================================
+   pages/about.css — About Page Styles
+   ============================================================ */
+
+
+/* ============================================================
+   STORY SECTION
+   Large heading left + body text right
+   ============================================================ */
+.about-story__inner {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--sp-20);
+  align-items: start;
+}
+
+.about-story__heading {
+  font-size: clamp(var(--text-3xl), 4.5vw, var(--text-5xl));
+  font-weight: 300;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  position: sticky;
+  top: calc(var(--nav-height) + var(--sp-8));
+}
+
+.about-story__body p {
+  margin-bottom: var(--sp-6);
+}
+
+.about-story__body p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  .about-story__inner {
+    grid-template-columns: 1fr;
+    gap: var(--sp-10);
+  }
+  .about-story__heading {
+    position: static;
+  }
+}
+
+
+/* ============================================================
+   STATS ROW
+   Four stats in a horizontal strip.
+   ============================================================ */
+.about-stats__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-2);
+}
+
+@media (max-width: 768px) {
+  .about-stats__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* ============================================================
+   VALUES / APPROACH
+   Numbered list of principles.
+   ============================================================ */
+.about-values__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-12) var(--sp-16);
+}
+
+.about-value__num {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: 300;
+  color: var(--color-accent);
+  opacity: 0.6;
+  line-height: 1;
+  margin-bottom: var(--sp-4);
+}
+
+.about-value__title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 400;
+  color: var(--color-text);
+  margin-bottom: var(--sp-4);
+}
+
+.about-value__body {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-loose);
+  max-width: none;
+}
+
+@media (max-width: 768px) {
+  .about-values__grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-10);
+  }
+}
+
+
+/* ============================================================
+   TEAM SECTION
+   Cards for each team member
+   ============================================================ */
+.about-team__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-8);
+}
+
+.team-card__photo {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface); /* shown while image loads */
+  margin-bottom: var(--sp-6);
+}
+
+.team-card__name {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 400;
+  color: var(--color-text);
+  letter-spacing: var(--tracking-tight);
+  margin-bottom: var(--sp-1);
+}
+
+.team-card__role {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--sp-4);
+  display: block;
+}
+
+.team-card__bio {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-loose);
+  max-width: none;
+}
+
+@media (max-width: 900px) {
+  .about-team__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .about-team__grid {
+    grid-template-columns: 1fr;
+  }
+}

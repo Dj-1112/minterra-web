@@ -1,0 +1,131 @@
+/* ============================================================
+   pages/services.css — Services Page Styles
+   ============================================================ */
+
+
+/* ============================================================
+   SERVICES GRID — Detailed cards
+   ============================================================ */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-6);
+}
+
+/* Larger, more detailed service cards on the services page */
+.services-grid .service-card {
+  padding: var(--sp-10);
+}
+
+.service-card__features {
+  margin-top: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.service-card__feature {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.service-card__feature::before {
+  content: '✓';
+  color: var(--color-accent);
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ============================================================
+   PROCESS SECTION
+   Horizontal step-by-step (only valid as a real process sequence)
+   ============================================================ */
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+  position: relative;
+}
+
+/* Connecting line between steps */
+.process-steps::before {
+  content: '';
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  right: 2rem;
+  height: 1px;
+  background-color: var(--color-border);
+  z-index: 0;
+}
+
+.process-step {
+  position: relative;
+  z-index: 1;
+  padding-top: 5rem; /* Must exceed circle height (4rem) — 5rem gives comfortable clearance */
+}
+
+.process-step__num {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4rem;
+  height: 4rem;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);   /* DM Sans — clear "1" vs "I" distinction */
+  font-size: var(--text-xl);
+  font-weight: 500;
+  color: var(--color-primary);
+  transition: background-color var(--ease-base), border-color var(--ease-base),
+              color var(--ease-base);
+}
+
+.process-step:hover .process-step__num {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-primary);
+}
+
+.process-step__title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 400;
+  color: var(--color-text);
+  margin-bottom: var(--sp-3);
+  letter-spacing: var(--tracking-tight);
+}
+
+.process-step__body {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-loose);
+  max-width: none;
+}
+
+@media (max-width: 900px) {
+  .process-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .process-steps::before { display: none; }
+}
+
+@media (max-width: 560px) {
+  .process-steps {
+    grid-template-columns: 1fr;
+  }
+}

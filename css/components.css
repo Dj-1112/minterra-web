@@ -1,0 +1,564 @@
+/* ============================================================
+   components.css — Reusable UI Components
+   Buttons, cards, ticker, section headers, forms, badges
+   ============================================================ */
+
+
+/* ============================================================
+   1. BUTTONS
+   Usage: <a class="btn btn--primary">Label</a>
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-3);
+  padding: var(--sp-4) var(--sp-8);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background-color var(--ease-fast), color var(--ease-fast),
+              border-color var(--ease-fast), transform var(--ease-fast),
+              box-shadow var(--ease-fast);
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.btn:active {
+  transform: translateY(0);
+}
+
+/* Primary — solid accent (brass) */
+.btn--primary {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  border: 1.5px solid var(--color-accent);
+}
+.btn--primary:hover {
+  background-color: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+}
+
+/* Secondary — outline dark */
+.btn--secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1.5px solid var(--color-primary);
+}
+.btn--secondary:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* Ghost White — outline white (for use on dark backgrounds) */
+.btn--ghost-white {
+  background-color: transparent;
+  color: var(--color-white);
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+}
+.btn--ghost-white:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--color-white);
+}
+
+/* Text link style button — no background, just underline */
+.btn--text {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  padding: 0;
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transform: none !important;
+  box-shadow: none !important;
+}
+.btn--text:hover {
+  color: var(--color-accent-dark);
+}
+
+
+/* ============================================================
+   2. SECTION HEADER
+   Usage:
+     <div class="section-header">
+       <span class="eyebrow">Label</span>
+       <h2 class="section-header__title">Heading</h2>
+       <p class="section-header__body">Description</p>
+     </div>
+   ============================================================ */
+.section-header {
+  margin-bottom: var(--sp-16);
+}
+
+/* Centered variant */
+.section-header--center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.section-header--center p { margin: 0 auto; }
+
+.section-header__title {
+  font-size: clamp(var(--text-3xl), 4vw, var(--text-5xl));
+  font-weight: 300;
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+  color: var(--color-text);
+  margin-bottom: var(--sp-6);
+}
+
+/* Title on dark background */
+.section--dark .section-header__title {
+  color: var(--color-white);
+}
+
+.section-header__body {
+  font-size: var(--text-base);
+  line-height: var(--leading-loose);
+  color: var(--color-text-muted);
+  max-width: 55ch;
+}
+
+.section--dark .section-header__body {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* Horizontal rule accent under heading */
+.section-header__rule {
+  display: block;
+  width: 2.5rem;
+  height: 1.5px;
+  background-color: var(--color-accent);
+  margin-top: var(--sp-8);
+}
+.section-header--center .section-header__rule {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* ============================================================
+   3. TICKER / MARQUEE
+   Signature element — horizontal scrolling strip between sections.
+   aria-hidden so screen readers skip decoration.
+   ============================================================ */
+.ticker {
+  overflow: hidden;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--sp-5) 0;
+  background-color: var(--color-bg);
+}
+
+.ticker__track {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-10);
+  white-space: nowrap;
+  /* Animation defined in pages/home.css for scoping */
+  animation: ticker-scroll 28s linear infinite;
+  width: max-content;
+}
+
+.ticker__item {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--color-text-muted);
+  letter-spacing: var(--tracking-tight);
+  flex-shrink: 0;
+}
+
+.ticker__dot {
+  color: var(--color-accent);
+  font-size: var(--text-sm);
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+
+/* ============================================================
+   4. PROJECT CARD
+   Used on home (featured) and projects page (grid).
+   ============================================================ */
+.project-card {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+}
+
+.project-card__link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Image wrapper — maintains aspect ratio */
+.project-card__image-wrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background-color: var(--color-surface);
+}
+
+.project-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--ease-slow);
+}
+
+.project-card:hover .project-card__image {
+  transform: scale(1.05);
+}
+
+/* Category badge on image */
+.project-card__badge {
+  position: absolute;
+  top: var(--sp-4);
+  left: var(--sp-4);
+  z-index: 2;
+  padding: var(--sp-1) var(--sp-4);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+}
+
+/* Card body below image */
+.project-card__body {
+  padding: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.project-card__num {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--color-accent);
+  letter-spacing: var(--tracking-wide);
+}
+
+.project-card__name {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 400;
+  color: var(--color-text);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+  margin: 0;
+}
+
+.project-card__meta {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  letter-spacing: var(--tracking-wide);
+  max-width: none;
+}
+
+/* Hover arrow indicator */
+.project-card__arrow {
+  position: absolute;
+  bottom: var(--sp-6);
+  right: var(--sp-6);
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  transition: background-color var(--ease-fast), border-color var(--ease-fast),
+              color var(--ease-fast), transform var(--ease-fast);
+}
+
+.project-card:hover .project-card__arrow {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-primary);
+  transform: rotate(45deg);
+}
+
+
+/* ============================================================
+   5. SERVICE CARD
+   Used on home (preview) and services page.
+   ============================================================ */
+.service-card {
+  padding: var(--sp-8);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: border-color var(--ease-base), box-shadow var(--ease-base),
+              transform var(--ease-base);
+}
+
+.service-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.service-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--sp-6);
+  font-size: 1.4rem;
+  transition: background-color var(--ease-fast);
+}
+
+.service-card:hover .service-card__icon {
+  background-color: var(--color-accent);
+}
+
+.service-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 400;
+  color: var(--color-text);
+  margin-bottom: var(--sp-4);
+  letter-spacing: var(--tracking-tight);
+}
+
+.service-card__body {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-loose);
+  max-width: none;
+}
+
+
+/* ============================================================
+   6. STAT BLOCK
+   Large number + label for stats/numbers sections.
+   ============================================================ */
+.stat-block {
+  padding: var(--sp-8) 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.stat-block__number {
+  font-family: var(--font-body);       /* DM Sans — its "1" is clearly a number, not an I */
+  font-size: clamp(var(--text-4xl), 5vw, var(--text-5xl));
+  font-weight: 300;
+  color: var(--color-primary);
+  line-height: 1;
+  letter-spacing: var(--tracking-tight);
+}
+
+.stat-block__suffix {
+  color: var(--color-accent);
+}
+
+.stat-block__label {
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--color-text-muted);
+  letter-spacing: var(--tracking-wide);
+  margin-top: var(--sp-3);
+}
+
+/* Dark background variant */
+.section--dark .stat-block {
+  border-top-color: rgba(255, 255, 255, 0.15);
+}
+.section--dark .stat-block__number {
+  color: var(--color-white);
+}
+.section--dark .stat-block__label {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+
+/* ============================================================
+   7. CONTACT FORM
+   ============================================================ */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-6);
+}
+
+.form-group label {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: var(--sp-4) var(--sp-5);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  transition: border-color var(--ease-fast), box-shadow var(--ease-fast);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--color-border);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(27, 58, 45, 0.08);
+  outline: none;
+}
+
+.form-group textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* Two-column form row */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-6);
+}
+
+@media (max-width: 600px) {
+  .form-row { grid-template-columns: 1fr; }
+}
+
+/* Form success message */
+.form-success {
+  display: none;
+  padding: var(--sp-6);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  color: var(--color-primary);
+  font-size: var(--text-base);
+  text-align: center;
+}
+
+
+/* ============================================================
+   8. CTA BANNER SECTION
+   Dark green full-bleed strip. Defined here (not just in home.css)
+   so about, services, and projects pages can use it too.
+   ============================================================ */
+.home-cta {
+  padding: var(--sp-24) 0;
+  background-color: var(--color-primary);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Decorative large watermark text behind content */
+.home-cta::before {
+  content: 'MINTERRA';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-display);
+  font-size: clamp(8rem, 20vw, 22rem);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.03);
+  white-space: nowrap;
+  pointer-events: none;
+  letter-spacing: -0.05em;
+}
+
+.home-cta__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.home-cta__title {
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
+  font-weight: 300;
+  color: var(--color-white);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+  max-width: 22ch;
+  margin: 0 auto var(--sp-6);
+}
+
+.home-cta__title em {
+  font-style: italic;
+  color: var(--color-accent);
+}
+
+.home-cta__body {
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 50ch;
+  margin: 0 auto var(--sp-10);
+}
+
+.home-cta__actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+}
+
+
+/* ============================================================
+   9. IMAGE PLACEHOLDER
+   Shown while real images haven't been added yet.
+   Remove this class once real images are in place.
+   ============================================================ */
+.img-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-border) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}

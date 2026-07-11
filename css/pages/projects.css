@@ -1,0 +1,95 @@
+/* ============================================================
+   pages/projects.css — Projects / Portfolio Page Styles
+   ============================================================ */
+
+
+/* ============================================================
+   FILTER TABS
+   Horizontal tabs to filter by category.
+   Active state and JS behavior in js/pages/projects.js.
+   ============================================================ */
+.projects-filter {
+  display: flex;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+  margin-bottom: var(--sp-12);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--sp-2);
+}
+
+.filter-btn {
+  padding: var(--sp-3) var(--sp-6);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-text-muted);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: color var(--ease-fast), border-color var(--ease-fast);
+  margin-bottom: -1px; /* Overlap parent border */
+}
+
+.filter-btn:hover {
+  color: var(--color-primary);
+}
+
+.filter-btn.is-active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-accent);
+  font-weight: 500;
+}
+
+
+/* ============================================================
+   PROJECTS GRID
+   3-column responsive grid.
+   Cards are hidden/shown via JS filter.
+   ============================================================ */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-6);
+}
+
+/* Card hidden by filter */
+.project-card.is-hidden {
+  display: none;
+}
+
+/* Fade-in when card becomes visible via filter */
+.project-card.is-showing {
+  animation: cardReveal 0.3s ease forwards;
+}
+
+@keyframes cardReveal {
+  from { opacity: 0; transform: scale(0.97); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Empty state if no results match filter */
+.projects-empty {
+  display: none;
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--sp-20) 0;
+  color: var(--color-text-muted);
+}
+
+.projects-empty.is-visible {
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Minterra Architecture & Construction</title>
+  <meta name="description" content="Browse Minterra's portfolio of residential, commercial, and renovation projects across Bengaluru and Karnataka.">
+  <link rel="canonical" href="https://minterra.in/projects.html">
+
+  <meta property="og:title" content="Projects — Minterra">
+  <meta property="og:description" content="Architecture and construction portfolio.">
+  <meta property="og:image" content="https://YOUR-GITHUB-USERNAME.github.io/minterra-assets/site/og-image.jpg">
+  <meta property="og:url" content="https://minterra.in/projects.html">
+
+  <link rel="icon" type="image/x-icon" href="icons/favicon.ico">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages/projects.css">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav nav--solid" role="navigation" aria-label="Main navigation">
+    <div class="nav__container">
+      <a href="index.html" class="nav__logo" aria-label="Minterra Home">
+        <span class="nav__logo-mark" aria-hidden="true">M</span>
+        <span class="nav__logo-text">Minterra</span>
+      </a>
+      <ul class="nav__links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html" class="nav__cta">Contact Us</a></li>
+      </ul>
+      <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav__mobile-menu" role="dialog" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+
+  <main>
+
+    <!-- PAGE HEADER -->
+    <header class="page-header" aria-label="Page header">
+      <div class="page-header__container">
+        <span class="page-header__eyebrow">Our Portfolio</span>
+        <h1 class="page-header__title">
+          Projects That<br>
+          Speak for Themselves
+        </h1>
+      </div>
+      <span class="page-header__bg-text" aria-hidden="true">Work</span>
+    </header>
+
+
+    <!-- ============================================================
+         PROJECTS SECTION
+         Filter tabs + project card grid.
+         
+         TO ADD A NEW PROJECT:
+         1. Add images to minterra-assets/projects/project-00X-name/
+            (cover.jpg + gallery-01.jpg, gallery-02.jpg...)
+         2. Copy one <article class="project-card"> block below
+         3. Update: data-category, image src, number, name, location, year
+         4. Project immediately appears in the correct filter tab
+         
+         CATEGORIES available:
+         - residential  (villas, houses, apartments)
+         - commercial   (offices, retail, hospitality)
+         - renovation   (existing space transformations)
+         - interior     (interior-only projects)
+         
+         To add a new category: also add a <button class="filter-btn"> above.
+         ============================================================ -->
+    <section class="section" aria-labelledby="projects-list-heading">
+      <div class="container">
+
+        <h2 class="sr-only" id="projects-list-heading">All Projects</h2>
+
+        <!-- FILTER TABS -->
+        <div class="projects-filter" role="tablist" aria-label="Filter projects by type">
+          <button class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true">
+            All Projects
+          </button>
+          <button class="filter-btn" data-filter="residential" role="tab" aria-selected="false">
+            Residential
+          </button>
+          <button class="filter-btn" data-filter="commercial" role="tab" aria-selected="false">
+            Commercial
+          </button>
+          <button class="filter-btn" data-filter="renovation" role="tab" aria-selected="false">
+            Renovation
+          </button>
+          <button class="filter-btn" data-filter="interior" role="tab" aria-selected="false">
+            Interior
+          </button>
+        </div>
+
+
+        <!-- PROJECTS GRID -->
+        <div class="projects-grid reveal-group" id="projectsGrid">
+
+          <!-- PROJECT 001 — Residential -->
+          <article class="project-card reveal-item" data-category="residential">
+            <a href="#" class="project-card__link" aria-label="View River Edge Villa project">
+              <!-- Replace YOUR-GITHUB-USERNAME throughout this file -->
+              <div class="project-card__image-wrap">
+                <img
+                  src="https://YOUR-GITHUB-USERNAME.github.io/minterra-assets/projects/project-001-river-edge-villa/cover.jpg"
+                  alt="River Edge Villa — riverside residential build by Minterra"
+                  class="project-card__image"
+                  loading="lazy">
+                <span class="project-card__badge">Residential</span>
+              </div>
+              <div class="project-card__body">
+                <span class="project-card__num">001</span>
+                <h3 class="project-card__name">River Edge Villa</h3>
+                <p class="project-card__meta">Bengaluru · 2024</p>
+              </div>
+              <span class="project-card__arrow" aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <!-- PROJECT 002 — Commercial -->
+          <article class="project-card reveal-item" data-category="commercial">
+            <a href="#" class="project-card__link" aria-label="View Prestige Office Park project">
+              <div class="project-card__image-wrap">
+                <img
+                  src="https://YOUR-GITHUB-USERNAME.github.io/minterra-assets/projects/project-002-prestige-office-park/cover.jpg"
+                  alt="Prestige Office Park — commercial build by Minterra"
+                  class="project-card__image"
+                  loading="lazy">
+                <span class="project-card__badge">Commercial</span>
+              </div>
+              <div class="project-card__body">
+                <span class="project-card__num">002</span>
+                <h3 class="project-card__name">Prestige Office Park</h3>
+                <p class="project-card__meta">Bengaluru · 2024</p>
+              </div>
+              <span class="project-card__arrow" aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <!-- PROJECT 003 — Renovation -->
+          <article class="project-card reveal-item" data-category="renovation">
+            <a href="#" class="project-card__link" aria-label="View Heritage Home Revival project">
+              <div class="project-card__image-wrap">
+                <img
+                  src="https://YOUR-GITHUB-USERNAME.github.io/minterra-assets/projects/project-003-heritage-home-revival/cover.jpg"
+                  alt="Heritage Home Revival — renovation project by Minterra"
+                  class="project-card__image"
+                  loading="lazy">
+                <span class="project-card__badge">Renovation</span>
+              </div>
+              <div class="project-card__body">
+                <span class="project-card__num">003</span>
+                <h3 class="project-card__name">Heritage Home Revival</h3>
+                <p class="project-card__meta">Mysuru · 2023</p>
+              </div>
+              <span class="project-card__arrow" aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <!--
+            ══════════════════════════════════════════════════════════
+            ADD NEW PROJECTS BELOW — copy the block above and update:
+              - data-category="residential|commercial|renovation|interior"
+              - Image src (update project folder name and YOUR-GITHUB-USERNAME)
+              - alt text
+              - project-card__num (next in sequence)
+              - project-card__name
+              - project-card__meta (location · year)
+            ══════════════════════════════════════════════════════════
+          -->
+
+          <!-- Empty state — shown if a filter has no matches -->
+          <div class="projects-empty" role="status" aria-live="polite">
+            <p>No projects in this category yet — check back soon.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         VIDEO SHOWCASE
+         Add autoplay YouTube embeds here to showcase walkthrough videos.
+         
+         HOW TO ADD A YOUTUBE VIDEO:
+         1. Upload your video to YouTube (can be Unlisted if you don't want
+            it appearing in YouTube search — it will still embed on your site)
+         2. Get the video ID from the YouTube URL
+            e.g. https://www.youtube.com/watch?v=dQw4w9WgXcQ → ID is dQw4w9WgXcQ
+         3. Replace VIDEO_ID_HERE below with your actual video ID
+         4. The video will autoplay muted (required by all browsers)
+         
+         To add more videos: copy the <div class="video-item"> block.
+         ============================================================ -->
+    <section class="section section--surface" aria-labelledby="videos-heading">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <span class="eyebrow">In Motion</span>
+          <h2 class="section-header__title" id="videos-heading">
+            Project Walkthroughs
+          </h2>
+          <p class="section-header__body">
+            See our completed spaces come to life.
+          </p>
+        </div>
+
+        <!--
+          VIDEO GRID — update iframe src attributes with real YouTube video IDs.
+          Remove this whole section if no videos are ready yet.
+        -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;" class="reveal-group">
+
+          <div class="reveal-item" style="aspect-ratio: 16/9; border-radius: 4px; overflow: hidden; background: var(--color-surface);">
+            <!--
+              Replace VIDEO_ID_HERE with your YouTube video ID.
+              autoplay=1 → starts automatically
+              mute=1     → must be muted for autoplay to work in browsers
+              loop=1     → loops the video
+              playlist=  → required for loop to work (same ID as main video)
+              controls=0 → hides YouTube controls (optional, remove if you want controls)
+            -->
+            <iframe
+              style="width:100%; height:100%; border:0;"
+              src="https://www.youtube.com/embed/VIDEO_ID_HERE?autoplay=1&mute=1&loop=1&playlist=VIDEO_ID_HERE&controls=1&rel=0"
+              title="Minterra project walkthrough video"
+              frameborder="0"
+              allow="autoplay; encrypted-media; picture-in-picture"
+              allowfullscreen
+              loading="lazy">
+            </iframe>
+          </div>
+
+          <!-- Second video — duplicate block above and update VIDEO_ID_HERE -->
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CTA -->
+    <section class="home-cta" aria-labelledby="projects-cta-heading">
+      <div class="container home-cta__inner reveal">
+        <h2 class="home-cta__title" id="projects-cta-heading">
+          Want to Be<br>
+          <em>Our Next Project?</em>
+        </h2>
+        <p class="home-cta__body">
+          We take on a select number of projects each year.
+          Get in touch early to discuss your build.
+        </p>
+        <div class="home-cta__actions">
+          <a href="contact.html" class="btn btn--primary">Start a Conversation</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__main">
+      <div class="footer__brand">
+        <p class="footer__brand-name">Minterra</p>
+        <p class="footer__tagline">Building where vision meets ground.<br>Architecture &amp; Construction, Bengaluru.</p>
+      </div>
+      <div class="footer__col">
+        <h3 class="footer__col-title">Pages</h3>
+        <ul role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h3 class="footer__col-title">Services</h3>
+        <ul role="list">
+          <li><a href="services.html">Architecture &amp; Design</a></li>
+          <li><a href="services.html">Construction &amp; Build</a></li>
+          <li><a href="services.html">Interior Design</a></li>
+          <li><a href="services.html">Renovation</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h3 class="footer__col-title">Get In Touch</h3>
+        <ul role="list">
+          <li><a href="mailto:hello@minterra.in">hello@minterra.in</a></li>
+          <li><a href="tel:+919XXXXXXXXX">+91 9XX XXX XXXX</a></li>
+          <li><span>Bengaluru, Karnataka</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; <span id="year"></span> Minterra. All rights reserved.</p>
+      <p>Designed &amp; Built with care.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/pages/projects.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minterra — Architecture & Construction</title>
+  <meta name="description" content="Minterra crafts spaces with intention, precision, and lasting quality. Architecture and construction services in Bengaluru.">
+  <link rel="canonical" href="https://minterra.in/">
+
+  <!-- Open Graph (social sharing preview) -->
+  <meta property="og:title" content="Minterra — Architecture & Construction">
+  <meta property="og:description" content="Building where vision meets ground.">
+  <meta property="og:image" content="https://YOUR-GITHUB-USERNAME.github.io/minterra-assets/site/og-image.jpg">
+  <meta property="og:url" content="https://minterra.in/">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon — add your logo files to /icons/ -->
+  <link rel="icon" type="image/x-icon" href="icons/favicon.ico">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages/home.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+       Starts transparent over hero, turns solid on scroll (main.js).
+       ============================================================ -->
+  <nav class="nav nav--transparent" role="navigation" aria-label="Main navigation">
+    <div class="nav__container">
+
+      <!-- Logo -->
+      <a href="index.html" class="nav__logo" aria-label="Minterra Home">
+        <span class="nav__logo-mark" aria-hidden="true">M</span>
+        <span class="nav__logo-text">Minterra</span>
+      </a>
+
+      <!-- Desktop nav links -->
+      <ul class="nav__links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html" class="nav__cta">Contact Us</a></li>
+      </ul>
+
+      <!-- Mobile hamburger button -->
+      <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile fullscreen menu overlay -->
+  <div class="nav__mobile-menu" role="dialog" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+
+  <main>
+
+    <!-- ============================================================
+         HERO
+         Full-viewport height opening section.
+         
+         TO ADD A REAL BACKGROUND IMAGE:
+         Add data-bg="URL_TO_YOUR_IMAGE" to the <section> tag below.
+         The CSS gradient fallback shows until you do this.
+         Example:
+         <section class="hero" data-bg="https://YOUR-GITHUB-USERNAME.github.io/minterra-assets/site/hero-bg.jpg">
+         ============================================================ -->
+    <section class="hero" aria-label="Hero">
+      <div class="hero__overlay" aria-hidden="true"></div>
+
+      <div class="hero__content">
+        <span class="hero__eyebrow">Architecture &amp; Construction · Bengaluru</span>
+
+        <h1 class="hero__headline">
+          We Build Where<br>
+          <em>Vision Meets</em><br>
+          Ground.
+        </h1>
+
+        <p class="hero__subline">
+          Minterra crafts spaces with intention, precision,<br>
+          and materials that stand the test of time.
+        </p>
+
+        <div class="hero__actions">
+          <a href="projects.html" class="btn btn--primary">View Our Work</a>
+          <a href="contact.html" class="btn btn--ghost-white">Get In Touch</a>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="hero__scroll" aria-hidden="true">
+        <span class="hero__scroll-label">Scroll</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         TICKER
+         Scrolling marquee strip — signature brand element.
+         aria-hidden: screen readers skip this decorative element.
+         ============================================================ -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <!-- First set -->
+        <span class="ticker__item">Residential Design</span>
+        <span class="ticker__dot">✦</span>
+        <span class="ticker__item">Commercial Build</span>
+        <span class="ticker__dot">✦</span>
+        <span class="ticker__item">Interior Spaces</span>
+        <span class="ticker__dot">✦</span>
+        <span class="ticker__item">Renovation &amp; Retrofit</span>
+        <span class="ticker__dot">✦</span>
+        <span class="ticker__item">Landscaping</span>
+        <span class="ticker__dot">✦</span>
+        <span class="ticker__item">Project Management</span>
+        <span class="ticker__dot">✦</span>
+        <!-- Duplicate set for seamless infinite loop -->
+        <span class="ticker__item">Residential Design</span>
+        <span class="ticker__dot">✦</span>
+        <span class="ticker__item">Commercial Build</span>
+        <span class="ticker__dot">✦</span>
+        <span class="ticker__item">Interior Spaces</span>
+        <span class="ticker__dot">✦</span>
+        <span class="ticker__item">Renovation &amp; Retrofit</span>
+        <span class="ticker__dot">✦</span>
+        <span class="ticker__item">Landscaping</span>
+        <span class="ticker__dot">✦</span>
+        <span class="ticker__item">Project Management</span>
+        <span class="ticker__dot">✦</span>
+      </div>
+    </div>
+
+
+    <!-- ============================================================
+         ABOUT GLIMPSE
+         Short intro + stats. Full story is on about.html.
+         ============================================================ -->
+    <section class="home-about section" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="home-about__inner">
+
+          <!-- Left: text -->
+          <div class="reveal">
+            <span class="eyebrow">Who We Are</span>
+            <h2 class="home-about__title" id="about-heading">
+              Spaces Built to<br>
+              <em>Last Generations</em>
+            </h2>
+            <p class="home-about__body">
+              Minterra was founded on a simple belief — that every building is a legacy.
+              We bring together architectural vision and construction expertise under one roof,
+              so our clients never have to bridge the gap between design and delivery.
+            </p>
+            <a href="about.html" class="btn btn--secondary">Our Story</a>
+          </div>
+
+          <!-- Right: stats -->
+          <div class="home-about__stats reveal-group" aria-label="Company statistics">
+            <div class="stat-block reveal-item">
+              <span class="stat-block__number">20<span class="stat-block__suffix">+</span></span>
+              <span class="stat-block__label">Projects Completed</span>
+            </div>
+            <div class="stat-block reveal-item">
+              <span class="stat-block__number">5<span class="stat-block__suffix">+</span></span>
+              <span class="stat-block__label">Years of Experience</span>
+            </div>
+            <div class="stat-block reveal-item">
+              <span class="stat-block__number">3</span>
+              <span class="stat-block__label">Cities Delivered</span>
+            </div>
+            <div class="stat-block reveal-item">
+              <span class="stat-block__number">100<span class="stat-block__suffix">%</span></span>
+              <span class="stat-block__label">Client Satisfaction</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+
+    <!-- ============================================================
+         SERVICES PREVIEW
+         3 highlight services. Full list on services.html.
+         ============================================================ -->
+    <section class="section section--surface" aria-labelledby="services-heading">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <span class="eyebrow">What We Do</span>
+          <h2 class="section-header__title" id="services-heading">
+            Craft at Every Stage
+          </h2>
+          <p class="section-header__body">
+            From the first sketch to the final finish — we guide your project
+            with expertise, transparency, and precision.
+          </p>
+        </div>
+
+        <!-- SERVICE CARDS GRID -->
+        <div class="home-services__grid reveal-group">
+
+          <div class="service-card reveal-item">
+            <div class="service-card__icon" aria-hidden="true">🏛️</div>
+            <h3 class="service-card__title">Architecture &amp; Design</h3>
+            <p class="service-card__body">
+              Conceptual design, 3D visualisation, working drawings, and
+              regulatory approvals — beautifully resolved before a single brick is laid.
+            </p>
+          </div>
+
+          <div class="service-card reveal-item">
+            <div class="service-card__icon" aria-hidden="true">🔨</div>
+            <h3 class="service-card__title">Construction &amp; Build</h3>
+            <p class="service-card__body">
+              End-to-end construction management with skilled labour, quality materials,
+              and timeline accountability on every project.
+            </p>
+          </div>
+
+          <div class="service-card reveal-item">
+            <div class="service-card__icon" aria-hidden="true">🪑</div>
+            <h3 class="service-card__title">Interior Design</h3>
+            <p class="service-card__body">
+              Space planning, material curation, and furniture selection that
+              transforms a building into a place people love living and working in.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="home-services__footer reveal">
+          <a href="services.html" class="btn btn--secondary">All Services</a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         FEATURED PROJECTS
+         Asymmetric grid: 1 large card + 2 stacked.
+         
+         TO UPDATE IMAGE URLS:
+         Replace "YOUR-GITHUB-USERNAME" with your GitHub username.
+         Image filenames always remain cover.jpg — see README.
+         ============================================================ -->
+    <section class="section" aria-labelledby="projects-heading">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <span class="eyebrow">Our Work</span>
+          <h2 class="section-header__title" id="projects-heading">
+            Featured Projects
+          </h2>
+        </div>
+
+        <div class="home-projects__grid reveal-group">
+
+          <!-- LARGE CARD (left, spans 2 rows) -->
+          <article class="project-card reveal-item" data-category="residential">
+            <a href="projects.html" class="project-card__link" aria-label="River Edge Villa project">
+              <div class="project-card__image-wrap">
+                <!-- Replace YOUR-GITHUB-USERNAME with your GitHub username -->
+                <img
+                  src="https://YOUR-GITHUB-USERNAME.github.io/minterra-assets/projects/project-001-river-edge-villa/cover.jpg"
+                  alt="River Edge Villa — a riverside residential project by Minterra"
+                  class="project-card__image"
+                  loading="eager">
+                <span class="project-card__badge">Residential</span>
+              </div>
+              <div class="project-card__body">
+                <span class="project-card__num">001</span>
+                <h3 class="project-card__name">River Edge Villa</h3>
+                <p class="project-card__meta">Bengaluru · 2024</p>
+              </div>
+              <span class="project-card__arrow" aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <!-- SMALL CARD 1 (top right) -->
+          <article class="project-card reveal-item" data-category="commercial">
+            <a href="projects.html" class="project-card__link" aria-label="Prestige Office Park project">
+              <div class="project-card__image-wrap">
+                <img
+                  src="https://YOUR-GITHUB-USERNAME.github.io/minterra-assets/projects/project-002-prestige-office-park/cover.jpg"
+                  alt="Prestige Office Park — a commercial project by Minterra"
+                  class="project-card__image"
+                  loading="lazy">
+                <span class="project-card__badge">Commercial</span>
+              </div>
+              <div class="project-card__body">
+                <span class="project-card__num">002</span>
+                <h3 class="project-card__name">Prestige Office Park</h3>
+                <p class="project-card__meta">Bengaluru · 2024</p>
+              </div>
+              <span class="project-card__arrow" aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <!-- SMALL CARD 2 (bottom right) -->
+          <article class="project-card reveal-item" data-category="renovation">
+            <a href="projects.html" class="project-card__link" aria-label="Heritage Home Revival project">
+              <div class="project-card__image-wrap">
+                <img
+                  src="https://YOUR-GITHUB-USERNAME.github.io/minterra-assets/projects/project-003-heritage-home-revival/cover.jpg"
+                  alt="Heritage Home Revival — a renovation project by Minterra"
+                  class="project-card__image"
+                  loading="lazy">
+                <span class="project-card__badge">Renovation</span>
+              </div>
+              <div class="project-card__body">
+                <span class="project-card__num">003</span>
+                <h3 class="project-card__name">Heritage Home Revival</h3>
+                <p class="project-card__meta">Mysuru · 2023</p>
+              </div>
+              <span class="project-card__arrow" aria-hidden="true">→</span>
+            </a>
+          </article>
+
+        </div>
+
+        <div class="home-projects__footer reveal">
+          <a href="projects.html" class="btn btn--secondary">View All Projects</a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         CTA BANNER
+         Dark green full-bleed strip with contact invitation.
+         ============================================================ -->
+    <section class="home-cta" aria-labelledby="cta-heading">
+      <div class="container home-cta__inner reveal">
+        <h2 class="home-cta__title" id="cta-heading">
+          Have a Space in<br>
+          <em>Mind?</em>
+        </h2>
+        <p class="home-cta__body">
+          Whether it's a home, an office, or a renovation — let's talk about
+          what you're building and how Minterra can bring it to life.
+        </p>
+        <div class="home-cta__actions">
+          <a href="contact.html" class="btn btn--primary">Start a Conversation</a>
+          <a href="projects.html" class="btn btn--ghost-white">See Our Portfolio</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__main">
+
+      <!-- Brand column -->
+      <div class="footer__brand">
+        <p class="footer__brand-name">Minterra</p>
+        <p class="footer__tagline">
+          Building where vision meets ground.<br>
+          Architecture &amp; Construction, Bengaluru.
+        </p>
+        <div class="footer__social" aria-label="Social media links">
+          <!-- Update href values with real social profile URLs -->
+          <a href="#" class="footer__social-link" aria-label="Instagram">In</a>
+          <a href="#" class="footer__social-link" aria-label="LinkedIn">Li</a>
+          <a href="#" class="footer__social-link" aria-label="Houzz">Ho</a>
+        </div>
+      </div>
+
+      <!-- Pages column -->
+      <div class="footer__col">
+        <h3 class="footer__col-title">Pages</h3>
+        <ul role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Services column -->
+      <div class="footer__col">
+        <h3 class="footer__col-title">Services</h3>
+        <ul role="list">
+          <li><a href="services.html">Architecture &amp; Design</a></li>
+          <li><a href="services.html">Construction &amp; Build</a></li>
+          <li><a href="services.html">Interior Design</a></li>
+          <li><a href="services.html">Renovation</a></li>
+          <li><a href="services.html">Landscaping</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact column -->
+      <div class="footer__col">
+        <h3 class="footer__col-title">Get In Touch</h3>
+        <ul role="list">
+          <!-- Update with real email and phone -->
+          <li><a href="mailto:hello@minterra.in">hello@minterra.in</a></li>
+          <li><a href="tel:+919XXXXXXXXX">+91 9XX XXX XXXX</a></li>
+          <li><span>Bengaluru, Karnataka</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; <span id="year"></span> Minterra. All rights reserved.</p>
+      <p>Designed &amp; Built with care.</p>
+    </div>
+  </footer>
+
+
+  <!-- JS — global first, then page-specific -->
+  <script src="js/main.js"></script>
+  <script src="js/pages/home.js"></script>
+
+  <!-- Auto-update copyright year -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
