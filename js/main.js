@@ -10,12 +10,12 @@
    minterra-assets repo is set up and GitHub Pages is enabled.
 
    All image src attributes in the HTML files use:
-   https://YOUR-GITHUB-USERNAME.github.io/minterra-assets/...
+   https://dj-1112.github.io/minterra-assets/...
    
-   Do a Find & Replace of "YOUR-GITHUB-USERNAME" across all 
+   Do a Find & Replace of "dj-1112" across all 
    HTML files once you have your GitHub username.
    ============================================================ */
-// const ASSETS_BASE = 'https://YOUR-GITHUB-USERNAME.github.io/minterra-assets';
+// const ASSETS_BASE = 'https://dj-1112.github.io/minterra-assets';
 
 
 /* ============================================================

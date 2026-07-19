@@ -10,7 +10,7 @@
   <!-- Open Graph (social sharing preview) -->
   <meta property="og:title" content="Minterra — Architecture & Construction">
   <meta property="og:description" content="Building where vision meets ground.">
-  <meta property="og:image" content="https://YOUR-GITHUB-USERNAME.github.io/minterra-assets/site/og-image.jpg">
+  <meta property="og:image" content="https://dj-1112.github.io/minterra-assets/site/og-image.jpg">
   <meta property="og:url" content="https://minterra.in/">
   <meta property="og:type" content="website">
 
@@ -34,7 +34,8 @@
 
       <!-- Logo -->
       <a href="index.html" class="nav__logo" aria-label="Minterra Home">
-        <span class="nav__logo-mark" aria-hidden="true">M</span>
+        <!-- <span class="nav__logo-mark" aria-hidden="true">M</span> -->
+        <img class="nav__logo-mark" aria-hidden="true" src="https://dj-1112.github.io/minterra-assets/site/logo.png" alt="Minterra Logo">
         <span class="nav__logo-text">Minterra</span>
       </a>
 
@@ -69,43 +70,51 @@
   <main>
 
     <!-- ============================================================
-         HERO
-         Full-viewport height opening section.
-         
-         TO ADD A REAL BACKGROUND IMAGE:
-         Add data-bg="URL_TO_YOUR_IMAGE" to the <section> tag below.
-         The CSS gradient fallback shows until you do this.
-         Example:
-         <section class="hero" data-bg="https://YOUR-GITHUB-USERNAME.github.io/minterra-assets/site/hero-bg.jpg">
+         HERO — VIDEO BACKGROUND
+         Layout: video fills the viewport, CTA buttons sit below on ivory.
+
+         VIDEO SETUP:
+         1. Export/compress your 30-second video as MP4 (H.264)
+            Target: under 10 MB — use HandBrake (free) to compress
+            Resolution: 1920×1080 minimum
+         2. Upload to: minterra-assets/site/hero-video.mp4
+         3. Replace dj-1112 in the <source> src below
+
+         FALLBACK: Until the video is added, the video container shows
+         the Forest Green brand color (looks clean on its own).
          ============================================================ -->
     <section class="hero" aria-label="Hero">
-      <div class="hero__overlay" aria-hidden="true"></div>
 
-      <div class="hero__content">
-        <span class="hero__eyebrow">Architecture &amp; Construction · Bengaluru</span>
+      <!-- Video container — rounded card -->
+      <div class="hero__video-container">
 
-        <h1 class="hero__headline">
-          We Build Where<br>
-          <em>Vision Meets</em><br>
-          Ground.
-        </h1>
-
-        <p class="hero__subline">
-          Minterra crafts spaces with intention, precision,<br>
-          and materials that stand the test of time.
-        </p>
-
-        <div class="hero__actions">
-          <a href="projects.html" class="btn btn--primary">View Our Work</a>
-          <a href="contact.html" class="btn btn--ghost-white">Get In Touch</a>
+        <div class="hero__video-bg">
+          <!--
+            autoplay  — starts automatically
+            muted     — required for autoplay to work in all browsers
+            loop      — plays continuously
+            playsinline — plays inline on iOS (no fullscreen takeover)
+            preload="auto" — loads video early for smooth playback
+          -->
+          <video autoplay muted loop playsinline preload="auto">
+            <source
+              src="https://dj-1112.github.io/minterra-assets/site/hero-video.mp4"
+              type="video/mp4">
+            <!-- No fallback text needed — CSS bg color covers it -->
+          </video>
         </div>
+
+        <!-- Subtle overlay for depth -->
+        <div class="hero__overlay" aria-hidden="true"></div>
+
       </div>
 
-      <!-- Scroll indicator -->
-      <div class="hero__scroll" aria-hidden="true">
-        <span class="hero__scroll-label">Scroll</span>
-        <div class="hero__scroll-line"></div>
+      <!-- CTA buttons — below the video, on ivory background -->
+      <div class="hero__actions">
+        <a href="projects.html" class="btn btn--secondary">View Our Work</a>
+        <a href="contact.html" class="btn btn--primary">Get In Touch</a>
       </div>
+
     </section>
 
 
@@ -259,7 +268,7 @@
          Asymmetric grid: 1 large card + 2 stacked.
          
          TO UPDATE IMAGE URLS:
-         Replace "YOUR-GITHUB-USERNAME" with your GitHub username.
+         Replace "dj-1112" with your GitHub username.
          Image filenames always remain cover.jpg — see README.
          ============================================================ -->
     <section class="section" aria-labelledby="projects-heading">
@@ -278,9 +287,9 @@
           <article class="project-card reveal-item" data-category="residential">
             <a href="projects.html" class="project-card__link" aria-label="River Edge Villa project">
               <div class="project-card__image-wrap">
-                <!-- Replace YOUR-GITHUB-USERNAME with your GitHub username -->
+                <!-- Replace dj-1112 with your GitHub username -->
                 <img
-                  src="https://YOUR-GITHUB-USERNAME.github.io/minterra-assets/projects/project-001-river-edge-villa/cover.jpg"
+                  src="https://dj-1112.github.io/minterra-assets/projects/project-001-river-edge-villa/cover.jpg"
                   alt="River Edge Villa — a riverside residential project by Minterra"
                   class="project-card__image"
                   loading="eager">
@@ -300,7 +309,7 @@
             <a href="projects.html" class="project-card__link" aria-label="Prestige Office Park project">
               <div class="project-card__image-wrap">
                 <img
-                  src="https://YOUR-GITHUB-USERNAME.github.io/minterra-assets/projects/project-002-prestige-office-park/cover.jpg"
+                  src="https://dj-1112.github.io/minterra-assets/projects/project-002-prestige-office-park/cover.jpg"
                   alt="Prestige Office Park — a commercial project by Minterra"
                   class="project-card__image"
                   loading="lazy">
@@ -320,7 +329,7 @@
             <a href="projects.html" class="project-card__link" aria-label="Heritage Home Revival project">
               <div class="project-card__image-wrap">
                 <img
-                  src="https://YOUR-GITHUB-USERNAME.github.io/minterra-assets/projects/project-003-heritage-home-revival/cover.jpg"
+                  src="https://dj-1112.github.io/minterra-assets/projects/project-003-heritage-home-revival/cover.jpg"
                   alt="Heritage Home Revival — a renovation project by Minterra"
                   class="project-card__image"
                   loading="lazy">

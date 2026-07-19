@@ -108,7 +108,7 @@
    ============================================================ */
 .about-team__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr); /* 2 team members — update count here if adding more */
   gap: var(--sp-8);
 }
 
@@ -147,12 +147,7 @@
   max-width: none;
 }
 
-@media (max-width: 900px) {
-  .about-team__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
+/* 2-column grid — stacks to 1 column only on small mobile */
 @media (max-width: 560px) {
   .about-team__grid {
     grid-template-columns: 1fr;

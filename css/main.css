@@ -7,7 +7,7 @@
 /* ============================================================
    1. GOOGLE FONTS IMPORT
    ============================================================ */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
 
 
 /* ============================================================
@@ -16,21 +16,21 @@
    ============================================================ */
 :root {
 
-  /* --- Color Palette --- */
-  --color-primary:      #1B3A2D;   /* Deep Forest Green — brand primary */
-  --color-primary-dark: #0F2219;   /* Darker green for hover states */
-  --color-accent:       #C8A96E;   /* Warm Brass — premium accent */
-  --color-accent-dark:  #A88B52;   /* Darker brass for hover */
-  --color-bg:           #F5F3EF;   /* Warm Off-White — main background */
-  --color-surface:      #EAF0EB;   /* Light Sage — alternate section bg */
+  /* --- Color Palette — Finalized Brand Colors --- */
+  --color-primary:      #364330;   /* FOREST GREEN — brand primary */
+  --color-primary-dark: #243020;   /* Darker Forest Green — footer, deep elements */
+  --color-accent:       #C8A96E;   /* Warm Brass — accent, highlights, buttons */
+  --color-accent-dark:  #a88b52;   /* Dark Brass — hover states */
+  --color-bg:           #F8F8F5;   /* IVORY — main page background */
+  --color-surface:      #EDEEE9;   /* Light Ivory-Sage tint — alternate section bg */
   --color-text:         #1C1C1C;   /* Near Black — body text */
-  --color-text-muted:   #6B7D72;   /* Muted Green-Grey — captions, meta */
-  --color-border:       #D5DDD6;   /* Subtle border color */
+  --color-text-muted:   #6E7866;   /* Muted Forest-tone grey — captions, meta */
+  --color-border:       #D3D5CE;   /* Sage-tinted subtle border */
   --color-white:        #FFFFFF;
 
-  /* --- Typography --- */
-  --font-display: 'Cormorant Garamond', Georgia, serif;  /* Headings, hero */
-  --font-body:    'DM Sans', system-ui, sans-serif;      /* Body, UI, nav */
+  /* --- Typography — Montserrat throughout --- */
+  --font-display: 'Montserrat', sans-serif;   /* Headings, display text */
+  --font-body:    'Montserrat', sans-serif;   /* Body copy, nav, UI labels */
 
   /* --- Type Scale --- */
   --text-xs:   0.75rem;    /* 12px — captions, eyebrows */
@@ -108,6 +108,7 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  scrollbar-width: none;
 }
 
 body {
