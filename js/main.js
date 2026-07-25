@@ -29,15 +29,24 @@
 
   const SCROLL_THRESHOLD = 80;
 
+  /* Logo img — only acts when data-logo-scrolled attribute exists.
+     data-logo-transparent = white/light logo (used over video)
+     data-logo-scrolled    = coloured logo (used on solid nav)     */
+  const logoImg = nav.querySelector('.nav__logo-mark[data-logo-scrolled]');
+
   function updateNav() {
     if (window.scrollY > SCROLL_THRESHOLD) {
       nav.classList.add('nav--scrolled');
       nav.classList.remove('nav--transparent');
+      // Switch to coloured logo when nav goes solid
+      if (logoImg) logoImg.src = logoImg.dataset.logoScrolled;
     } else {
       // Only go transparent if the nav started transparent (home page)
       if (nav.dataset.transparent === 'true') {
         nav.classList.remove('nav--scrolled');
         nav.classList.add('nav--transparent');
+        // Switch back to white logo when nav is transparent over video
+        if (logoImg) logoImg.src = logoImg.dataset.logoTransparent;
       }
     }
   }
