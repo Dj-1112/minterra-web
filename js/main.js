@@ -206,3 +206,57 @@
     });
   });
 })();
+
+
+/* ============================================================
+   7. PROJECT CARD SLIDESHOW
+   Runs on any page that has project cards with data-slides-path.
+   Home page and projects page both benefit automatically.
+
+   To add/update a project's slideshow:
+   - Set data-slides-path  = full base URL to the project folder
+   - Set data-slides-count = total images (cover.jpg counts as 1,
+     then gallery-01.jpg = 2, gallery-02.jpg = 3, and so on)
+   ============================================================ */
+(function initProjectSlideshow() {
+  const INTERVAL_MS = 3000;
+
+  document.querySelectorAll('.project-card[data-slides-path]').forEach(card => {
+    const basePath = card.dataset.slidesPath;
+    const count = parseInt(card.dataset.slidesCount, 10) || 1;
+    if (count < 2) return;
+
+    const urls = ['cover.jpg'];
+    for (let i = 1; i < count; i++) {
+      urls.push(`gallery-${String(i).padStart(2, '0')}.jpg`);
+    }
+
+    const imageWrap = card.querySelector('.project-card__image-wrap');
+    if (!imageWrap) return;
+
+    const badge = imageWrap.querySelector('.project-card__badge');
+    const badgeClone = badge ? badge.cloneNode(true) : null;
+
+    imageWrap.innerHTML = '';
+
+    urls.forEach((filename, index) => {
+      const img = document.createElement('img');
+      img.src = `${basePath}/${filename}`;
+      img.alt = card.querySelector('.project-card__name')
+        ?.textContent?.trim() || '';
+      img.className = 'project-card__slide' + (index === 0 ? ' is-active' : '');
+      img.loading = index === 0 ? 'eager' : 'lazy';
+      imageWrap.appendChild(img);
+    });
+
+    if (badgeClone) imageWrap.appendChild(badgeClone);
+
+    let current = 0;
+    setInterval(() => {
+      const slides = imageWrap.querySelectorAll('.project-card__slide');
+      slides[current].classList.remove('is-active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('is-active');
+    }, INTERVAL_MS);
+  });
+})();

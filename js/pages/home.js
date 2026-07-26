@@ -1,12 +1,11 @@
 /* ============================================================
    js/pages/home.js — Home Page Interactions
-   Load this ONLY on index.html (already done in the <script> tag).
    ============================================================ */
 
 
 /* ============================================================
    TICKER PAUSE ON HOVER
-   Pauses the scrolling marquee when the user hovers over it.
+   Pauses the scrolling marquee when the user hovers.
    ============================================================ */
 (function initTickerPause() {
   const ticker = document.querySelector('.ticker');

@@ -233,6 +233,28 @@
   transform: scale(1.05);
 }
 
+/* ---- Project card slideshow ---- */
+/* Slides are stacked absolutely; JS adds/removes .is-active to crossfade */
+.project-card__slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.9s ease, transform var(--ease-slow);
+}
+
+.project-card__slide.is-active {
+  opacity: 1;
+}
+
+/* Keep the subtle zoom on the visible slide on hover */
+.project-card:hover .project-card__slide.is-active {
+  transform: scale(1.05);
+}
+
 /* Category badge on image */
 .project-card__badge {
   position: absolute;

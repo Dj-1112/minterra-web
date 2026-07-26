@@ -521,21 +521,20 @@ p {
 }
 
 .footer__social-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-block;
+  opacity: 0.65;
+  transition: opacity var(--ease-fast), transform var(--ease-fast);
+}
+
+.footer__social-link img {
   width: 2.25rem;
   height: 2.25rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  font-size: var(--text-xs);
-  color: rgba(255, 255, 255, 0.7);
-  transition: border-color var(--ease-fast), color var(--ease-fast);
+  display: block;
 }
 
 .footer__social-link:hover {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
+  opacity: 1;
+  transform: translateY(-2px);
 }
 
 /* Footer link columns */
