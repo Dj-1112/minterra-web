@@ -95,7 +95,6 @@
          - residential  (villas, houses, apartments)
          - commercial   (offices, retail, hospitality)
          - renovation   (existing space transformations)
-         - interior     (interior-only projects)
          
          To add a new category: also add a <button class="filter-btn"> above.
          ============================================================ -->
@@ -141,22 +140,14 @@
             >
               Renovation
             </button>
-            <button
-              class="filter-btn"
-              data-filter="interior"
-              role="tab"
-              aria-selected="false"
-            >
-              Interior
-            </button>
           </div>
 
           <!-- PROJECTS GRID -->
           <div class="projects-grid reveal-group" id="projectsGrid">
-            <!-- PROJECT 001 — Residential -->
+            <!-- PROJECT 001 — Commercial -->
             <article
               class="project-card reveal-item"
-              data-category="residential"
+              data-category="commercial"
               data-slides-path="https://dj-1112.github.io/minterra-assets/projects/project-001-the-ovoid-district"
               data-slides-count="6"
             >
@@ -169,25 +160,25 @@
                 <div class="project-card__image-wrap">
                   <img
                     src="https://dj-1112.github.io/minterra-assets/projects/project-001-the-ovoid-district/cover.jpg"
-                    alt="The Ovoid District — riverside residential build by Minterra"
+                    alt="The Ovoid District — riverside commercial build by Minterra"
                     class="project-card__image"
                     loading="lazy"
                   />
-                  <span class="project-card__badge">Residential</span>
+                  <span class="project-card__badge">Commercial</span>
                 </div>
                 <div class="project-card__body">
                   <span class="project-card__num">001</span>
                   <h3 class="project-card__name">The Ovoid District</h3>
-                  <p class="project-card__meta">Bengaluru · 2024</p>
+                  <p class="project-card__meta">Bengaluru · 2025</p>
                 </div>
                 <span class="project-card__arrow" aria-hidden="true">→</span>
               </a>
             </article>
 
-            <!-- PROJECT 002 — Commercial -->
+            <!-- PROJECT 002 — Residential -->
             <article
               class="project-card reveal-item"
-              data-category="commercial"
+              data-category="residential"
               data-slides-path="https://dj-1112.github.io/minterra-assets/projects/project-002-samudra"
               data-slides-count="5"
             >
@@ -195,16 +186,18 @@
                 <div class="project-card__image-wrap">
                   <img
                     src="https://dj-1112.github.io/minterra-assets/projects/project-002-samudra/cover.jpg"
-                    alt="Samudra — commercial build by Minterra"
+                    alt="Samudra — residential build by Minterra"
                     class="project-card__image"
                     loading="lazy"
                   />
-                  <span class="project-card__badge">Commercial</span>
+                  <span class="project-card__badge">Residential</span>
                 </div>
                 <div class="project-card__body">
                   <span class="project-card__num">002</span>
-                  <h3 class="project-card__name">Samudra</h3>
-                  <p class="project-card__meta">Bengaluru · 2024</p>
+                  <h3 class="project-card__name">
+                    Samudra Developers Plotted Development
+                  </h3>
+                  <p class="project-card__meta">Chandapura, Bengaluru · 2024</p>
                 </div>
                 <span class="project-card__arrow" aria-hidden="true">→</span>
               </a>
@@ -229,17 +222,17 @@
                 </div>
                 <div class="project-card__body">
                   <span class="project-card__num">003</span>
-                  <h3 class="project-card__name">Church</h3>
-                  <p class="project-card__meta">Mysuru · 2023</p>
+                  <h3 class="project-card__name">C.S.I Church</h3>
+                  <p class="project-card__meta">Gopalapuram, Chennai · 2023</p>
                 </div>
                 <span class="project-card__arrow" aria-hidden="true">→</span>
               </a>
             </article>
 
-            <!-- PROJECT 004 — Renovation -->
+            <!-- PROJECT 004 — Commercial -->
             <article
               class="project-card reveal-item"
-              data-category="renovation"
+              data-category="commercial"
               data-slides-path="https://dj-1112.github.io/minterra-assets/projects/project-004-the-courtyard"
               data-slides-count="4"
             >
@@ -247,16 +240,42 @@
                 <div class="project-card__image-wrap">
                   <img
                     src="https://dj-1112.github.io/minterra-assets/projects/project-004-the-courtyard/cover.jpg"
-                    alt="The Courtyard — renovation project by Minterra"
+                    alt="The Courtyard — commercial project by Minterra"
+                    class="project-card__image"
+                    loading="lazy"
+                  />
+                  <span class="project-card__badge">Commercial</span>
+                </div>
+                <div class="project-card__body">
+                  <span class="project-card__num">004</span>
+                  <h3 class="project-card__name">The Courtyard</h3>
+                  <p class="project-card__meta">Hyderabad · 2026</p>
+                </div>
+                <span class="project-card__arrow" aria-hidden="true">→</span>
+              </a>
+            </article>
+
+            <!-- PROJECT 005 — Renovation -->
+            <article
+              class="project-card reveal-item"
+              data-category="renovation"
+              data-slides-path="https://dj-1112.github.io/minterra-assets/projects/project-005-siet-college"
+              data-slides-count="5"
+            >
+              <a href="#" class="project-card__link" aria-label="SIET College">
+                <div class="project-card__image-wrap">
+                  <img
+                    src="https://dj-1112.github.io/minterra-assets/projects/project-005-siet-college/cover.jpg"
+                    alt="SIET College — renovation project by Minterra"
                     class="project-card__image"
                     loading="lazy"
                   />
                   <span class="project-card__badge">Renovation</span>
                 </div>
                 <div class="project-card__body">
-                  <span class="project-card__num">004</span>
-                  <h3 class="project-card__name">The Courtyard</h3>
-                  <p class="project-card__meta">Mysuru · 2023</p>
+                  <span class="project-card__num">005</span>
+                  <h3 class="project-card__name">SIET College</h3>
+                  <p class="project-card__meta">Teynampet, Chennai · 2026</p>
                 </div>
                 <span class="project-card__arrow" aria-hidden="true">→</span>
               </a>
@@ -265,7 +284,7 @@
             <!--
             ══════════════════════════════════════════════════════════
             ADD NEW PROJECTS BELOW — copy the block above and update:
-              - data-category="residential|commercial|renovation|interior"
+              - data-category="residential|commercial|renovation"
               - Image src (update project folder name and dj-1112)
               - alt text
               - project-card__num (next in sequence)
@@ -351,8 +370,35 @@
               >
               </iframe>
             </div>
-
             <!-- Second video — duplicate block above and update VIDEO_ID_HERE -->
+            <div
+              class="reveal-item"
+              style="
+                aspect-ratio: 16/9;
+                border-radius: 4px;
+                overflow: hidden;
+                background: var(--color-surface);
+              "
+            >
+              <!--
+              Replace VIDEO_ID_HERE with your YouTube video ID.
+              autoplay=1 → starts automatically
+              mute=1     → must be muted for autoplay to work in browsers
+              loop=1     → loops the video
+              playlist=  → required for loop to work (same ID as main video)
+              controls=0 → hides YouTube controls (optional, remove if you want controls)
+            -->
+              <iframe
+                style="width: 100%; height: 100%; border: 0"
+                src="https://www.youtube.com/embed/5rc5msfcda0?autoplay=1&mute=1&loop=1&playlist=5rc5msfcda0&controls=1&rel=0"
+                title="Minterra project walkthrough video"
+                frameborder="0"
+                allow="autoplay; encrypted-media; picture-in-picture"
+                allowfullscreen
+                loading="lazy"
+              >
+              </iframe>
+            </div>
           </div>
         </div>
       </section>
@@ -383,8 +429,8 @@
         <div class="footer__brand">
           <p class="footer__brand-name">Minterra</p>
           <p class="footer__tagline">
-            Building where vision meets ground.<br />Architecture &amp;
-            Construction, Bengaluru.
+            Where Vision Meets Landscape.<br />Landscape Architecture | 3D
+            Visualization | Consultancy.
           </p>
         </div>
         <div class="footer__col">
@@ -400,10 +446,11 @@
         <div class="footer__col">
           <h3 class="footer__col-title">Services</h3>
           <ul role="list">
-            <li><a href="services.html">Architecture &amp; Design</a></li>
-            <li><a href="services.html">Construction &amp; Build</a></li>
-            <li><a href="services.html">Interior Design</a></li>
-            <li><a href="services.html">Renovation</a></li>
+            <li><a href="services.html">Landscape Design</a></li>
+            <li><a href="services.html">Landscape Visualization</a></li>
+            <li><a href="services.html">3D Walkthroughs</a></li>
+            <li><a href="services.html">Construction Drawings</a></li>
+            <li><a href="services.html">Software Training</a></li>
           </ul>
         </div>
         <div class="footer__col">
