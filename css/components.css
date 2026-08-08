@@ -357,8 +357,8 @@
 .service-card__icon {
   display: block;
   flex-shrink: 0;
-  width: 4.5rem;
-  height: 4.5rem;
+  width: 3.5rem;
+  height: 3.5rem;
   object-fit: contain;
   padding: 0.25rem;
   background-color: var(--color-surface);
